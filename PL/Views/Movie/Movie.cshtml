@@ -1,0 +1,49 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "Movie";
+}
+@{
+<link rel="stylesheet" href="~/css/style/Card.css">
+<h1>Movie</h1>
+
+@foreach(Movie movie in Model.Movies){
+		@using (Html.BeginForm("AgregarFavorito", "Movie", FormMethod.Post, new { enctype = "multipart/form-data" }))
+		{
+			<div class="container mt-5">
+				<h2 class="text-center">Bootstrap movie cards</h2>
+				<div class="row justify-content-center">
+
+					<div class="card movie_card">
+						<img src="@movie.Poster" class="card-img-top" alt="...">
+						<div class="card-body">
+							<button type="submit" class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+							</button>
+							<h5 class="card-title">@movie.IdMovie</h5>
+							<span class="movie_info">@movie.Nombre</span>
+							<span class="movie_info">@movie.Descripcion</span>
+							<span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row col-md-12 justify-content-center">
+					<div class="card credits col-md-4 ">
+						<div class="card-body">
+							<p>Made with <i class="fas fa-heart"></i> by Sukhmeet Singh.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+	}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
+</script>
+}

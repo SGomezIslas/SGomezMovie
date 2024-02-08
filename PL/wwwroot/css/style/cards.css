@@ -1,0 +1,204 @@
+﻿.product-grid {
+    font-family: 'Poppins', sans-serif;
+}
+
+    .product-grid .product-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .product-grid .product-image a.image {
+            display: block;
+        }
+
+        .product-grid .product-image .pic-1 {
+            backface-visibility: hidden;
+            transition: all 0.4s ease 0s;
+        }
+
+        .product-grid .product-image:hover .pic-1 {
+            opacity: 0;
+        }
+
+        .product-grid .product-image .pic-2 {
+            width: 100%;
+            height: 100%;
+            transform: scale(1.1);
+            backface-visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.4s ease 0s;
+        }
+
+        .product-grid .product-image:hover .pic-2 {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .product-grid .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+    .product-grid .product-discount-label {
+        color: #fff;
+        background-color: #0dada1;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-align: center;
+        padding: 3px 7px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transition: all .3s ease;
+    }
+
+    .product-grid .product-links {
+        text-align: center;
+        width: 209px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        opacity: 0;
+        transform: translateX(-50%);
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transition: all 0.3s ease 0s;
+    }
+
+    .product-grid:hover .product-links {
+        opacity: 1;
+    }
+
+    .product-grid .product-links li {
+        margin: 0 2px;
+        display: inline-block;
+        opacity: 0;
+        transform: translateX(10px);
+        transition: all 0.3s ease 0.3s;
+    }
+
+    .product-grid:hover .product-links li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .product-grid:hover .product-links li:nth-child(3) {
+        transition-delay: 0.1s;
+    }
+
+    .product-grid:hover .product-links li:nth-child(4) {
+        transition-delay: 0s;
+    }
+
+    .product-grid:hover .product-links li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .product-grid .product-links li a {
+        color: #000;
+        background: #fff;
+        font-size: 17px;
+        text-align: center;
+        line-height: 45px;
+        width: 45px;
+        height: 45px;
+        box-shadow: 0 10px 15px rgba(0,0,0,.1);
+        display: block;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease 0s;
+    }
+
+        .product-grid .product-links li a:hover {
+            color: #fff;
+            background: #ba52ff;
+        }
+
+        .product-grid .product-links li a:before,
+        .product-grid .product-links li a:after {
+            content: attr(data-tip);
+            color: #fff;
+            background-color: #111;
+            font-size: 12px;
+            line-height: 22px;
+            padding: 1px 7px;
+            border-radius: 3px;
+            white-space: nowrap;
+            display: none;
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            top: -35px;
+            transition: all 0.3s ease;
+        }
+
+        .product-grid .product-links li a:after {
+            content: '';
+            height: 15px;
+            width: 15px;
+            padding: 0;
+            border-radius: 0;
+            transform: translateX(-50%) rotate(45deg);
+            top: -22px;
+            z-index: -1;
+        }
+
+        .product-grid .product-links li a:hover:before,
+        .product-grid .product-links li a:hover:after {
+            display: block;
+        }
+
+    .product-grid .product-content {
+        padding: 10px 0 0;
+    }
+
+    .product-grid .rating {
+        padding: 0;
+        margin: 0 0 5px;
+        list-style: none;
+    }
+
+        .product-grid .rating li {
+            color: #f5c136;
+            font-size: 11px;
+            margin: 0 1px;
+        }
+
+    .product-grid .title {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 22px;
+        text-transform: capitalize;
+        margin: 0 0 5px;
+    }
+
+        .product-grid .title a {
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+            .product-grid .title a:hover {
+                color: #ba52ff;
+            }
+
+    .product-grid .price {
+        color: #979797;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+
+        .product-grid .price span {
+            color: #999;
+            font-size: 13px;
+            text-decoration: line-through;
+        }
+
+@media screen and (max-width:990px) {
+    .product-grid {
+        margin: 0 0 30px;
+    }
